@@ -27,6 +27,10 @@ class Calculator
             case 'multiply':
                 return $this->num1 * $this->num2;
             case 'divide':
+                if ($this->num2 == 0) {
+                    throw new \InvalidArgumentException("Cannot divide by zero");
+
+                }
                 return $this->num1 / $this->num2;
             default:
                 throw new \InvalidArgumentException("Invalid operator");
