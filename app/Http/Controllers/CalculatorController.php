@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Classes\Calculator;
+use App\Http\Requests\CalculatorRequest;
 
 class CalculatorController extends Controller
 {
@@ -16,7 +15,7 @@ class CalculatorController extends Controller
         return view('calculator');
     }
 
-    public function calculate(Request $request){
+    public function calculate(CalculatorRequest $request){
         $num1 = $request->input('num1');
         $num2 = $request->input('num2');
         $operator = $request->input('operator');
